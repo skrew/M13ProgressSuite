@@ -460,6 +460,10 @@
 
 - (void)drawProgress
 {
+    if (self.progress==0.0) {
+        [_progressLayer setPath: nil];
+        return;
+    }
     //Create parameters to draw progress
     float startAngle = - M_PI_2;
     float endAngle = startAngle + (2.0 * M_PI * self.progress);
